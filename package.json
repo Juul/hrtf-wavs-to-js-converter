@@ -1,0 +1,13 @@
+{
+  "name": "hrtf-waves-to-js-converters",
+  "version": "0.0.1",
+  "dependencies": {
+    "async": "^2.1.5",
+    "glob-fs": "^0.1.6",
+    "minimist": "^1.2.0",
+    "wav-decoder": "^1.1.0"
+  },
+  "scripts": {},
+  "license": "AGPL-3.0",
+  "devDependencies": {}
+}
