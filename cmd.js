@@ -63,7 +63,7 @@ function wav_to_js(fileName, precision, cb) {
       // TODO handle error
 
       chan0 = decoded.channelData[0];
-      chan1 = decoded.channelData[0];
+      chan1 = decoded.channelData[1];
       for(i=0; i < chan0.length; i++) {
         out0.push(round(chan0[i], precision));
         out1.push(round(chan1[i], precision));
