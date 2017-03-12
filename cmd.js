@@ -89,6 +89,18 @@ function convertFile(filePath, cb) {
   var m = fileName.match(/IRC_(\d+)_([CD])_R(\d+)_T(\d+)_P(\d+)\.wav/);
   if(!m) return cb(new Error("File name not recognized as an IRCAM HRTF filename"));
 
+  var distance = parseInt(m[3]) / 100; // cm to m
+
+  // azimuth is represented from -180 to 180 
+  // from left to right in the IRCAM js format
+  // but in the IRCAM wav file format 
+  // it is 0 to 180 for front to left and 180 to 359 for front to right
+  var azimuth = parseInt(m[4]);
+  if(azimuth <= 180) {
+    azimuth = -azimuth 
+  } else if(azimuth > 180) {
+    azimuth = azimuth - 180;
+  }
 
   // elevation for sources below your head are represented as negative numbers
   // in the IRCAM js format
@@ -96,8 +108,8 @@ function convertFile(filePath, cb) {
   elevation = (elevation > 180) ? elevation - 360 : elevation
 
   var o = {
-    azimuth: parseInt(m[4]),
-    distance: 1, // TODO this is always 1 in the binauralFIR js HRTF example, why?
+    azimuth: azimuth,
+    distance: distance,
     elevation: elevation
   };
   
@@ -114,6 +126,7 @@ function convertFile(filePath, cb) {
 
 glob.readdir(path.join(wavDirPath, '*.wav'), function(err, files) {
   if(err) fail(err);
+  if(!files.length) fail(new Error("No files found in specified directory."));
 
   var o = [];
 
