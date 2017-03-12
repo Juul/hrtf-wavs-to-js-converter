@@ -1,6 +1,8 @@
 {
   "name": "hrtf-wavs-to-js-converters",
   "version": "0.0.1",
+  "description": "Convert sets of wav HRTFs to binauralFIR js format",
+  "main": "cmd.js",
   "dependencies": {
     "async": "^2.1.5",
     "glob-fs": "^0.1.6",
@@ -9,5 +11,23 @@
   },
   "scripts": {},
   "license": "AGPL-3.0",
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/juul/hrtf-wavs-to-js-converters.git"
+  },
+  "keywords": [
+    "HRTF",
+    "binaural",
+    "convert",
+    "wav",
+    "js",
+    "IRCAM",
+    "binauralFIR"
+  ],
+  "author": {
+    "name": "Marc Juul",
+    "email": "npm@juul.io",
+    "url": "https://github.com/juul"
+  },
 }
