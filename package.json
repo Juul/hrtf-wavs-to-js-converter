@@ -1,5 +1,5 @@
 {
-  "name": "hrtf-waves-to-js-converters",
+  "name": "hrtf-wavs-to-js-converters",
   "version": "0.0.1",
   "dependencies": {
     "async": "^2.1.5",

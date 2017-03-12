@@ -1,5 +1,5 @@
 
-A simple command line utility that uses the [waves-loaders](https://www.npmjs.com/package/waves-loaders) node module to convert a set of WAV format HRTFs to a single js file for use in the [binauralFIR]() module.
+A simple command line utility that converts a set of WAV format HRTFs to a single js file for use in the [binauralFIR]() module.
 
 Currently only understands sets of wav files from the [IRCAM HRTF database](http://recherche.ircam.fr/equipes/salles/listen/download.html).
 
